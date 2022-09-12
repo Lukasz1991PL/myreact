@@ -1,7 +1,8 @@
 import './index';
-import Hero from './components/hero/Hero';
-import SearchForm from './components/searchForm/SearchForm';
+import Hero from './components/Hero/Hero';
+import SearchForm from './components/SearchForm/SearchForm';
 import List from './components/List/list';
+
 const App = () => {
   return (
     <div>

@@ -1,21 +1,19 @@
+import styles from './List.module.scss';
+import Column from '../Column/Column';
 const List = () => {
   return (
-    <div>
-      <header>
-        Things to do <span>soon</span>
+    <div className={styles.list}>
+      <header className={styles.header}>
+        <h2 className={styles.header}>
+          Things to do<span>soon!</span>
+        </h2>
       </header>
-      <p>“Interesting things I want to check out”</p>
-      <section>
-        <aricle>
-          <h1>BOOKS</h1>
-        </aricle>
-        <aricle>
-          <h1>MOVIES</h1>
-        </aricle>
-        <aricle>
-          <h1>GAMES</h1>
-        </aricle>
-      </section>
+      <p className={styles.description}>
+        Interesting things I want to check out
+      </p>
+      <Column title='Books' />
+      <Column title='Movies' />
+      <Column title='Games' />
     </div>
   );
 };
