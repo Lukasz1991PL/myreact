@@ -11,9 +11,11 @@ const List = () => {
       <p className={styles.description}>
         Interesting things I want to check out
       </p>
-      <Column title='Books' />
-      <Column title='Movies' />
-      <Column title='Games' />
+      <section className={styles.columns}>
+        <Column title='Books' icon='book' />
+        <Column title='Movies' icon='film' />
+        <Column title='Games' icon='gamepad' />
+      </section>
     </div>
   );
 };
