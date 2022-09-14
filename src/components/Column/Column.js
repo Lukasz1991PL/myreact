@@ -5,7 +5,7 @@ const Column = (props) => {
     <article className={styles.column}>
       <h2 className={styles.title}>
         {props.title}
-        <span className={styles.icon + 'fa fa-' + props.icon}></span>
+        <span className={styles.icon + ' fa fa-' + props.icon}></span>
       </h2>
     </article>
   );
