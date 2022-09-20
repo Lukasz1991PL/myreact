@@ -45,7 +45,9 @@ const List = () => {
       },
     ]);
   };
+
   const addCard = (newCard, columnId) => {
+    debugger;
     const columnsUpdated = columns.map((column) => {
       if (column.id === columnId)
         return {
@@ -57,7 +59,6 @@ const List = () => {
 
     setColumns(columnsUpdated);
   };
-
   return (
     <div className={styles.list}>
       <header className={styles.header}>
@@ -72,13 +73,15 @@ const List = () => {
         {columns.map((column) => (
           <Column
             key={column.id}
+            id={column.id}
             title={column.title}
             icon={column.icon}
             cards={column.cards}
+            actionAddCart={addCard}
           />
         ))}
+        <ColumnForm action={addColumn} />
       </section>
-      {/* <ColumnForm columnId={id} action={addColumn} /> */}
     </div>
   );
 };
