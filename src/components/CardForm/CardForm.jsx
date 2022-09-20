@@ -1,14 +1,16 @@
-import styles from './ColumnForm.module.scss';
+import styles from './CardForm.module.scss';
 import { useState } from 'react';
+import Button from '../Button/Button';
+import TextInput from '../TextInput/TextInput';
+import ColumnForm from '../ColumnForm/ColumnForm';
 
-const ColumnForm = (props) => {
+const CardForm = ({ title, columnID, action }) => {
   const [value, setValue] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.action({ title: value });
+    action({ title: title }, columnID);
     setValue('');
   };
-
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -16,7 +18,7 @@ const ColumnForm = (props) => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button>Add column</button>
+      <Button>Add card</Button>
     </form>
   );
 };
