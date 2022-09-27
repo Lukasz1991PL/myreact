@@ -1,4 +1,4 @@
-//import styles from './ColumnForm.module.scss';
+import styles from './ColumnForm.module.scss';
 import { useState } from 'react';
 import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
@@ -13,7 +13,7 @@ const ColumnForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.columnForm} onSubmit={handleSubmit}>
       <span>Title:</span>
       <TextInput
         type='text'
