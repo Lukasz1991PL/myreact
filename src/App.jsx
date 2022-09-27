@@ -2,7 +2,6 @@ import './index';
 import Hero from './components/Hero/Hero';
 import SearchForm from './components/SearchForm/SearchForm';
 import List from './components/List/List';
-import { Counter } from './components/Counter/Counter';
 import Container from './components/Container/Container';
 
 const App = () => {
@@ -12,7 +11,6 @@ const App = () => {
         <Hero />
         <SearchForm />
         <List />
-        <Counter />
       </Container>
     </div>
   );
