@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { updateSearchString } from '../../redux/store';
-const SearchForm = () => {
+export const SearchForm = () => {
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
@@ -22,5 +22,3 @@ const SearchForm = () => {
     </form>
   );
 };
-
-export default SearchForm;

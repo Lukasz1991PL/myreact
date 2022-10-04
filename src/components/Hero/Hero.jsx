@@ -1,6 +1,6 @@
 import styles from './Hero.module.scss';
 
-const Hero = () => {
+export const Hero = () => {
   return (
     <div className={styles.hero}>
       <h1 className={styles.title}>My first React App</h1>
@@ -10,5 +10,3 @@ const Hero = () => {
     </div>
   );
 };
-
-export default Hero;
