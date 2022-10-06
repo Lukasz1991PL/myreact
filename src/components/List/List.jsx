@@ -9,8 +9,10 @@ import { Navigate } from 'react-router';
 export const List = () => {
   const { listId } = useParams();
   const columns = useSelector((state) => getColumnsByList(state, listId));
+  console.log('columns :>> ', columns);
   const listData = useSelector((state) => getListById(state, listId));
-
+  console.log('listData', listData);
+  console.log(typeof listId);
   if (!listData) return <Navigate to='/' />;
 
   return (

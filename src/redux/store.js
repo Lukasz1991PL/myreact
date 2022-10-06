@@ -30,6 +30,8 @@ export const updateSearchString = (payload) => ({
   type: 'UPDATE_SEARCHSTRING',
   payload,
 });
+export const addList = (payload) => ({ type: 'ADD_LIST', payload });
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'ADD_COLUMN':
@@ -43,7 +45,15 @@ const reducer = (state, action) => {
         cards: [...state.cards, { ...action.payload, id: shortid() }],
       };
     case 'UPDATE_SEARCHSTRING':
-      return { ...state, searchString: action.payload };
+      return {
+        ...state,
+        searchString: action.payload,
+      };
+    case 'UPDATE_LISTS':
+      return {
+        ...state,
+        lists: [...state.lists, { ...action.payload }],
+      };
 
     default:
       return state;
