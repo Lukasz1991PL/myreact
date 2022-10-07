@@ -18,7 +18,7 @@ export const SearchForm = () => {
       <TextInput
         placeholder='Search...'
         value={searchString}
-        onChange={(e) => setSearchString(e.target.value)}
+        onChange={setSearchString}
       />
       <Button>
         Search

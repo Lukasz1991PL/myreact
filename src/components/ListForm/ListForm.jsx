@@ -12,6 +12,7 @@ const ListForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('fasdsa');
     dispatch(addList({ title, description }));
     setTitle('');
     setDescription('');
@@ -27,7 +28,7 @@ const ListForm = () => {
         description={description}
         onChange={(e) => setDescription(e)}
       />
-      <Button>Add List</Button>
+      <Button handleClick={handleSubmit}>Add List</Button>
     </form>
   );
 };

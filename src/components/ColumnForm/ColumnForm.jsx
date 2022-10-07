@@ -4,23 +4,28 @@ import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 import { useDispatch } from 'react-redux';
 import { addColumn } from '../../redux/store';
-const ColumnForm = (listId) => {
-  const [title, setValue] = useState('');
+import shortid from 'shortid';
+import { useParams } from 'react-router-dom';
+const ColumnForm = () => {
+  const [title, setTitle] = useState('');
   const [icon, setIcon] = useState('');
   const dispatch = useDispatch();
+  const { listId } = useParams();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log({ title, icon });
     dispatch(addColumn({ listId, title, icon }));
-    setValue('');
+    setTitle('');
     setIcon('');
   };
 
   return (
     <form className={styles.columnForm} onSubmit={handleSubmit}>
       <span>Title:</span>
-      <TextInput type='text' title={title} onChange={(e) => setValue(e)} />
+      <TextInput type='text' title={title} onChange={setTitle} />
       <span>Icons:</span>
-      <TextInput type='text' icon={icon} onChange={(e) => setIcon(e)} />
+      <TextInput type='text' icon={icon} onChange={setIcon} />
       <Button>Add column</Button>
     </form>
   );

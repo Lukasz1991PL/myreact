@@ -10,6 +10,10 @@ export const getFilteredCards = ({ cards, searchString }, columnId) =>
       //card.title.toLowerCase().includes(searchString.toLowerCase())
       strContains(card.title, searchString)
   );
+export const getFilteredFavoriteCards = ({ cards }) => {
+  console.log('chech cards', cards);
+  return cards.filter((card) => card.isFavourite === true);
+};
 export const getAllColumns = (state) => {
   return state.columns;
 };
@@ -31,7 +35,10 @@ export const updateSearchString = (payload) => ({
   payload,
 });
 export const addList = (payload) => ({ type: 'ADD_LIST', payload });
-
+export const toggleCardFavourites = (payload) => ({
+  type: 'TOGGLE_CARD_FAVORITE',
+  payload,
+});
 const reducer = (state, action) => {
   switch (action.type) {
     case 'ADD_COLUMN':
@@ -42,7 +49,10 @@ const reducer = (state, action) => {
     case 'ADD_CARD':
       return {
         ...state,
-        cards: [...state.cards, { ...action.payload, id: shortid() }],
+        cards: [
+          ...state.cards,
+          { ...action.payload, isFavourite: false, id: shortid() },
+        ],
       };
     case 'UPDATE_SEARCHSTRING':
       return {
@@ -53,6 +63,15 @@ const reducer = (state, action) => {
       return {
         ...state,
         lists: [...state.lists, { ...action.payload }],
+      };
+    case 'TOGGLE_CARD_FAVORITE':
+      return {
+        ...state,
+        cards: state.cards.map((card) =>
+          card.id === action.payload
+            ? { ...card, isFavourite: !card.isFavourite }
+            : card
+        ),
       };
 
     default:
