@@ -24,7 +24,7 @@ export const Favourite = () => {
             <Card
               key={card.id}
               id={card.id}
-              isFavorite={card.isFavorite}
+              isFavourite={card.isFavourite}
               title={card.title}
             />
           ))}

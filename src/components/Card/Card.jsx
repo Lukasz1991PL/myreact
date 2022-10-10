@@ -12,6 +12,7 @@ const Card = ({ title, isFavourite, id }) => {
   const removedCard = () => {
     dispatch(removeCard(id));
   };
+  console.log('isFavourite :>> ', isFavourite);
   return (
     <li className={styles.card}>
       {title}
