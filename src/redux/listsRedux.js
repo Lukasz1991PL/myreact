@@ -1,16 +1,17 @@
 import shortid from 'shortid';
-
+//selectors
 export const getListById = ({ lists }, listId) =>
   lists.find((list) => list.id === listId);
 
 export const getAllLists = (state) => {
   return state.lists;
 };
-
+//actions
 const createActionName = (actionName) => `app/lists/${actionName}`;
 const ADD_LIST = createActionName('ADD_LIST');
 
-export const addList = (payload) => ({ type: 'ADD_LIST', payload });
+//actions creators
+export const addList = (payload) => ({ type: ADD_LIST, payload });
 const listsReducer = (statePart = [], action) => {
   switch (action.type) {
     case ADD_LIST:

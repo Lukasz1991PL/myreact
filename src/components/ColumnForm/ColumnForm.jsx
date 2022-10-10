@@ -3,8 +3,7 @@ import { useState } from 'react';
 import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 import { useDispatch } from 'react-redux';
-import { addColumn } from '../../redux/store';
-import shortid from 'shortid';
+import { addColumn } from '../../redux/columnsRedux';
 import { useParams } from 'react-router-dom';
 const ColumnForm = () => {
   const [title, setTitle] = useState('');
