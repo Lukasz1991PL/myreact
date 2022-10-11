@@ -5,6 +5,8 @@ import cardsRedux from './cardsRedux';
 import searchStringRedux from './searchStringRedux';
 import columnsRedux from './columnsRedux';
 
+//reducers
+
 const subreducers = {
   lists: listsRedux,
   columns: columnsRedux,

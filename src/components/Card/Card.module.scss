@@ -11,6 +11,16 @@
   justify-content: space-between;
   font-weight: bold;
 }
+.button_star {
+  border: none;
+  background-color: inherit;
+  color: black;
+}
+.button_trash {
+  border: none;
+  background-color: inherit;
+  color: black;
+}
 .active {
   color: red;
 }
