@@ -11,7 +11,7 @@ export const getFilteredCards = ({ cards, searchString }, columnId) =>
   );
 export const getFilteredFavoriteCards = ({ cards }) => {
   console.log('chech cards', cards);
-  return cards.filter((card) => card.isFavourite === true);
+  return cards.filter((card) => card.isFavorite === true);
 };
 
 //actions
@@ -22,7 +22,7 @@ const REMOVE_CARD = createActionName('REMOVE_CARD');
 //action creators
 export const addCard = (payload) => ({ type: ADD_CARD, payload });
 export const removeCard = (payload) => ({ type: REMOVE_CARD, payload });
-export const toggleCardFavourites = (payload) => ({
+export const toggleCardFavorites = (payload) => ({
   type: TOGGLE_CARD_FAVORITE,
   payload,
 });
@@ -33,7 +33,7 @@ const cardsReducer = (statePart = [], action) => {
     case TOGGLE_CARD_FAVORITE:
       return statePart.map((card) =>
         card.id === action.payload
-          ? { ...card, isFavourite: !card.isFavourite }
+          ? { ...card, isFavorite: !card.isFavorite }
           : card
       );
     case REMOVE_CARD:

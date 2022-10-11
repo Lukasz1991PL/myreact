@@ -1,18 +1,18 @@
 import styles from './Card.module.scss';
 import { useDispatch } from 'react-redux';
-import { toggleCardFavourites, removeCard } from '../../redux/cardsRedux';
+import { toggleCardFavorites, removeCard } from '../../redux/cardsRedux';
 
 import clsx from 'clsx';
 
-const Card = ({ title, isFavourite, id }) => {
+const Card = ({ title, isFavorite, id }) => {
   const dispatch = useDispatch();
   const classChange = () => {
-    dispatch(toggleCardFavourites(id));
+    dispatch(toggleCardFavorites(id));
   };
   const removedCard = () => {
     dispatch(removeCard(id));
   };
-  console.log('isFavourite :>> ', isFavourite);
+  console.log('isFavorite :>> ', isFavorite);
   return (
     <li className={styles.card}>
       {title}
@@ -20,7 +20,7 @@ const Card = ({ title, isFavourite, id }) => {
         <button
           type='button'
           onClick={classChange}
-          className={clsx(styles.button_star, isFavourite && styles.active)}
+          className={clsx(styles.button_star, isFavorite && styles.active)}
         >
           <span className='fa fa-star-o'></span>
         </button>
