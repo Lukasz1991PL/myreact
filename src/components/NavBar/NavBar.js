@@ -4,43 +4,45 @@ import { NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
   return (
-    <nav className={styles.navbar}>
+    <nav className={styles.nav}>
       <Container>
-        <a href='/'>
-          <i className='fa fa-tasks'></i>
-        </a>
-        <ul>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? styles.linkActive : undefined
-              }
-              to='/'
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? styles.linkActive : undefined
-              }
-              to='/about'
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? styles.linkActive : undefined
-              }
-              to='/favourites'
-            >
-              Favourites
-            </NavLink>
-          </li>
-        </ul>
+        <div className={styles.navbar}>
+          <a href='/'>
+            <i className='fa fa-tasks'></i>
+          </a>
+          <ul className={styles.navbar_items}>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? styles.linkActive : undefined
+                }
+                to='/'
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? styles.linkActive : undefined
+                }
+                to='/favorite'
+              >
+                Favorite
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? styles.linkActive : undefined
+                }
+                to='/about'
+              >
+                About
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </Container>
     </nav>
   );

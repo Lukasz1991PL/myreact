@@ -1,10 +1,37 @@
 @import '../../styles/settings.scss';
-.navbar {
+@import '../../styles/settings.scss';
+
+.nav {
   background-color: darken($color-dark, 3%);
-  font-size: 24px;
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
+  padding: 5px;
 }
-.linkActive {
-  color: $color-warning;
+
+i {
+  font-size: 40px;
+  color: white;
+  margin-top: 15px;
+}
+
+.navbar_items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 0px;
+
+  li a {
+    color: white;
+    margin-left: 10px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .linkActive {
+    color: $color-warning;
+  }
 }

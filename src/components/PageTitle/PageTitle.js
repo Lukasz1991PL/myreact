@@ -1,7 +1,9 @@
+import styles from './PageTitle.module.scss';
+
 export const PageTitle = ({ children }) => {
   return (
     <div>
-      <h2>{children}</h2>
+      <h2 className={styles.title}> {children}</h2>
     </div>
   );
 };
