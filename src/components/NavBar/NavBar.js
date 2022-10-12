@@ -26,7 +26,7 @@ export const NavBar = () => {
                 className={({ isActive }) =>
                   isActive ? styles.linkActive : undefined
                 }
-                to='/favorite'
+                to='/favorites'
               >
                 Favorite
               </NavLink>

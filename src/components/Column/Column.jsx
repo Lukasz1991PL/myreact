@@ -13,7 +13,6 @@ const Column = ({ icon, id, title }) => {
       </h2>
       <ul className={styles.cards}>
         {cards.map((card) => {
-          console.log('card', card);
           return <Card key={card.id} {...card} />;
         })}
       </ul>

@@ -10,7 +10,6 @@ export const getFilteredCards = ({ cards, searchString }, columnId) =>
       strContains(card.title, searchString)
   );
 export const getFilteredFavoriteCards = ({ cards }) => {
-  console.log('chech cards', cards);
   return cards.filter((card) => card.isFavorite === true);
 };
 

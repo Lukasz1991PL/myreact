@@ -9,7 +9,6 @@ export const Lists = () => {
     <section className={styles.lists}>
       <h2 className={styles.heading}>Browse lists</h2>
       {lists.map((list) => {
-        console.log('list', list);
         return (
           <Link
             key={list.id}

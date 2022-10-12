@@ -11,7 +11,6 @@ export const SearchForm = () => {
     e.preventDefault();
     dispatch(updateSearchString(searchString));
     setSearchString('');
-    console.log('searchString', searchString);
   };
   return (
     <form className={styles.searchForm} onSubmit={handleSubmit}>

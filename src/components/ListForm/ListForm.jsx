@@ -12,7 +12,6 @@ const ListForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('fasdsa');
     dispatch(addList({ title, description }));
     setTitle('');
     setDescription('');
